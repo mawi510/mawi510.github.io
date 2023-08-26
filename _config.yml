@@ -1,11 +1,13 @@
 title: John Doe # your name (or website title) here
-logo: "/images/logo.png?raw=true" # your photo (or logo) here
+# logo: "/images/logo.png?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   First description 
+  Hi! Welcome to my Github Portoflio. I hope you enojoy reading my insights as much as I enojyed scraping and analyzing data across the web.
   <br><br>
   Second description 
+  If you want to reach out, feel free to contact me at my LinkedIn Profile Below
   <br><br>
-  <a href="https://www.linkedin.com/in/example/">View My LinkedIn Profile</a> 
+  <a href="https://www.linkedin.com/in/dagmawi-fasil-241205100/">View My LinkedIn Profile</a> 
   
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
