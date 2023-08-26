@@ -7,7 +7,7 @@ description: > # your text below (remove <br> elements if you don't need line br
   Second description 
   If you want to reach out, feel free to contact me at my LinkedIn Profile Below
   <br><br>
-  <a href="https://www.linkedin.com/in/dagmawi-fasil-241205100/">View My LinkedIn Profile</a> 
+  <a href="https://www.linkedin.com/in/dagmawi-fasil-241205100/" target="_blank" rel="noopener noreferrer">View My LinkedIn Profile</a> 
   
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
