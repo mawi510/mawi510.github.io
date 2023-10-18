@@ -3,7 +3,10 @@
 ---
 
 
-[Is The Powerball Rigged?](/sample_page)
+## Is the Powerball Rigged?
+
+This is a test to see 
+
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
