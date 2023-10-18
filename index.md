@@ -7,7 +7,7 @@
 
 This is a test to see 
 
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+<img src="https://github.com/mawi510/projects/blob/main/Powerball%20Distribution/powerball_qqplot_image.png"/>
 
 ---
 [Project 2 Title](/pdf/sample_presentation.pdf)
