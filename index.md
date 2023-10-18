@@ -17,7 +17,7 @@ What was most surprising was that weather the weather variables had small coeffi
 
 The gradient boosted regression had a RMSE of ~10, which isn't great, and has a lot of room for improvement. The random forest classifier has a precision of ~70%, and recall of ~59%, meaning the model tends to over-classify which teams will cover the spread. The ROC Curve below shows that, while the model is better than random chance, there's still room to improve
 
-<img src="https://github.com/mawi510/projects/blob/main/PredictingNFLGames/classifier_roc_curve.png?raw=true"/>
+<img src="PredictingNFLGames/classifier_roc_curve.png?raw=true"/>
 
 
 
@@ -36,7 +36,7 @@ The powerball lottery selects 5 random numbers between 1 and 69 without replacem
 
 Unfortunately, the lottery is indeed a fair game, meaning I won't become a billionaire anytime soon. The QQ plot shows that the two distributions line up nearly perfectly, proving the powerball is indeed selecting the numbers at random, and there isn't any preference towards smaller or larger numbers.
 
-<img src="https://github.com/mawi510/projects/blob/main/Powerball%20Distribution/powerball_qqplot_image.png?raw=true"/>
+<img src="Powerball Distribution/powerball_qqplot_image.png?raw=true"/>
 
 
 
