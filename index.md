@@ -11,7 +11,7 @@ I scraped historical performance data, historical betting spreads, and historica
 
 The dataset looked at 3 game rolling averages of various metrics including offensive total yards, defensive turnovers, and opponent strength (measured as total point spread / total games played). 
 
-What was most surprising was that weather the weather variables had small coefficients. Not surprisingly, the strength of the opponent had the highest coefficient.
+What was most surprising was that weather variables had small coefficients. Not surprisingly, the strength of the opponent had the highest coefficient.
 
 <img src="https://github.com/mawi510/projects/blob/main/PredictingNFLGames/regressor_importance_chart.png?raw=true"/>
 
