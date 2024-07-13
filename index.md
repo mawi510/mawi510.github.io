@@ -5,6 +5,9 @@
 
 ### NFL Betting Spread Prediction
 
+**Interact with this model and view historical performance data for your favorite team [here](<ahttp://52.202.100.140:8501/</a>):**
+
+
 **Project overview:** As an avid sports fan, I looked for opportunities to incorporate both my fandom and my technical skillsets.
 
 I scraped historical performance data, historical betting spreads, and historical weather to create a dataset to train both a gradient boosted regression and a random forest classifier. 
