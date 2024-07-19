@@ -5,7 +5,7 @@
 
 ### NFL Betting Spread Prediction
 
-__Interact with this model and view historical performance data for your favorite team <a href="http://52.202.100.140:8501/" target="_blank" rel="noopener noreferrer">here</a>__
+__Interact with this model and view historical performance data for your favorite team <a href="http://promatchpredict.com/" target="_blank" rel="noopener noreferrer">here</a>__
 
 
 **Project overview:** As an avid sports fan, I looked for opportunities to incorporate both my fandom and my technical skillsets.
