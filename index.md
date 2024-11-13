@@ -10,23 +10,15 @@ __Interact with this model and view historical performance data for your favorit
 
 **Project overview:** As an avid sports fan, I looked for opportunities to incorporate both my fandom and my technical skillsets.
 
-I scraped historical performance data, historical betting spreads, and historical weather to create a dataset to train both a gradient boosted regression and a random forest classifier. 
+I scraped historical performance data, historical betting spreads, and historical weather to create a dataset to train a random forest classifier, which flows into the website listed above. This was a great project to construct an ETL pipeline, train/test an ML model, and then deploy said model to the cloud so others could interact with it.
 
-The dataset looked at 3 game rolling averages of various metrics including offensive total yards, defensive turnovers, and opponent strength (measured as total point spread / total games played). 
+The diagram below details how the website is powered and where data comes from
 
-What was most surprising was that weather variables had small coefficients. Not surprisingly, the strength of the opponent had the highest coefficient.
+<img src="https://github.com/mawi510/projects/blob/f2591ef992a979b873d3ceb14e7eaefedb044214/PredictingNFLGames/ProMatchPredict%20Diagram.png?raw=true"/>
 
-<img src="https://github.com/mawi510/projects/blob/main/PredictingNFLGames/regressor_importance_chart.png?raw=true"/>
+***Technical skills:*** Random Forests, Cloud Computing, CI/CD Pipeline, ETL
 
-The gradient boosted regression had a RMSE of ~10, which isn't great, and has a lot of room for improvement. The random forest classifier has a precision of ~70%, and recall of ~59%, meaning the model tends to over-classify which teams will cover the spread. The ROC Curve below shows that, while the model is better than random chance, there's still room to improve
-
-<img src="https://github.com/mawi510/projects/blob/main/PredictingNFLGames/classifier_roc_curve.png?raw=true"/>
-
-
-
-***Technical skills:*** Multi-Linear Regression, Random Forests
-
-***Tools:*** Python, Sci-kit Learn, Matplotlib
+***Tools:*** Python, Sci-kit Learn, Docker, EC2, Github Actions
 
 [![Open Code](https://img.shields.io/badge/Jupyter-Open_Files-red?logo=Jupyter)](https://github.com/mawi510/projects/tree/main/PredictingNFLGames)
 
