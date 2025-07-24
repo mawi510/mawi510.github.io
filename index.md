@@ -5,7 +5,7 @@
 
 ### NFL Betting Spread Prediction
 
-__Interact with this model and view historical performance data for your favorite team <a href="http://promatchpredict.com/" target="_blank" rel="noopener noreferrer">here</a>__
+__(Soon to be updated for the 2025 season!) Interact with this model and view historical performance data for your favorite team <a href="http://promatchpredict.com/" target="_blank" rel="noopener noreferrer">here</a>__
 
 
 **Project overview:** As an avid sports fan, I looked for opportunities to incorporate both my fandom and my technical skillsets.
