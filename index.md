@@ -2,17 +2,19 @@
 
 ---
 
-### Does Affordable Housing Raise Local Housing Costs? A Bayesian Analysis
+### Does Building Affordable Housing Raise Local Rents? A Bayesian Analysis
 
-**Project overview:** Affordable-housing policy gets debated constantly with little hard evidence. I asked a focused, data-driven question: as a U.S. county builds more Low-Income Housing Tax Credit (LIHTC) units, what actually happens to its home values and rents?
+**Project overview:** Housing debates throw around the claim that building Low-Income Housing Tax Credit (LIHTC) units pushes local home values and rents up. There's almost no data behind it, so I went and checked.
 
-I built two county-year panels by merging six messy public datasets (HUD's 54k-project LIHTC database, Zillow home & rent indices, three vintages of Census population estimates, and FRED inflation data) joined on county FIPS codes. I then fit a **Bayesian hierarchical model in PyMC** — county-level intercepts with state-varying slopes — so counties are treated as correlated within their state rather than as independent national samples.
+State coefficients vary so much that the "national effect of LIHTC" framing turns out to be the wrong question. Housing policy is local, and the model surfaces that directly. After adjusting for inflation (CPI-less-shelter) and population growth, I find a small positive association: 0.13% for home values and 0.32% for rents per 1% more LIHTC per capita. Hawaii, California, and Colorado run hot. Ohio and Oklahoma sit on zero. Leave-one-out cross-validation picks the inflation-adjusted hierarchical model over every alternative I tried.
 
-After deflating prices for inflation and controlling for population growth, I find a modest positive association (+0.13% for home values, +0.32% for rents per 1% increase in LIHTC per capita) that **varies sharply by state** — strong evidence that housing policy is better addressed locally than nationally. Formal leave-one-out (LOO) model comparison decisively favors the inflation-adjusted hierarchical model.
+To get there, I pulled six public datasets (HUD's 54k-project LIHTC database, Zillow home and rent indices, three vintages of Census population estimates, and FRED inflation data) and joined them on county FIPS into two county-year panels. Then I fit a Bayesian hierarchical model in PyMC with county intercepts and state-level slopes, so each county borrows strength from its state instead of collapsing into one national average.
 
-The forest plot below shows each state's posterior LIHTC slope: some straddle zero while high-demand states like Hawaii, California, and Colorado are strongly positive — heterogeneity a single pooled model would erase.
+The positive sign is the part worth sitting with. More rental supply should lower rents, so the result more likely reflects where credits get allocated (high-demand markets) than a price effect of the units themselves.
 
 <img src="https://github.com/mawi510/lihtc-bayesian-analysis/blob/main/reports/figures/housing_plot_forest.jpg?raw=true" width="480"/>
+
+<em>Each row is a state's posterior LIHTC slope on home values, 95% HDI. Several states sit on zero, others run well past it.</em>
 
 ***Technical skills:*** Bayesian Hierarchical Modeling, MCMC, Partial Pooling, LOO Model Comparison, Data Engineering (multi-source ETL)
 
