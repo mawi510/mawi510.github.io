@@ -4,13 +4,13 @@
 
 ### Does Building Affordable Housing Raise Local Rents? A Bayesian Analysis
 
-**Project overview:** Housing debates throw around the claim that building Low-Income Housing Tax Credit (LIHTC) units pushes local home values and rents up. There's almost no data behind it, so I went and checked.
+**Project overview:** Housing affordability has become a major political talking point, and the debate usually centers on market-rate housing. When affordable housing programs do come up, they tend to be criticized with little empirical evidence behind the claim. I wanted to measure the actual relationship between the Low-Income Housing Tax Credit (LIHTC), the largest affordable-housing program in the country, and local home values and rents.
 
-State coefficients vary so much that the "national effect of LIHTC" framing turns out to be the wrong question. Housing policy is local, and the model surfaces that directly. After adjusting for inflation (CPI-less-shelter) and population growth, I find a small positive association: 0.13% for home values and 0.32% for rents per 1% more LIHTC per capita. Hawaii, California, and Colorado run hot. Ohio and Oklahoma sit on zero. Leave-one-out cross-validation picks the inflation-adjusted hierarchical model over every alternative I tried.
+After controlling for population growth and deflating prices with CPI-less-shelter, I find a modest positive association: 0.13% for home values and 0.32% for rents per 1% increase in LIHTC units per capita. The effect varies widely by state. It is strongest in high-demand states such as Hawaii, California, and Colorado, and is statistically indistinguishable from zero in states like Ohio and Oklahoma. That variation is the central result. It suggests the "national effect of LIHTC" is the wrong question, since housing policy plays out locally. A leave-one-out comparison favors the inflation-adjusted hierarchical model over the alternatives.
 
-To get there, I pulled six public datasets (HUD's 54k-project LIHTC database, Zillow home and rent indices, three vintages of Census population estimates, and FRED inflation data) and joined them on county FIPS into two county-year panels. Then I fit a Bayesian hierarchical model in PyMC with county intercepts and state-level slopes, so each county borrows strength from its state instead of collapsing into one national average.
+The data came from six public sources (HUD's LIHTC database of 54k+ projects, Zillow home and rent indices, three vintages of Census population estimates, and FRED inflation series), joined on county FIPS into two county-year panels. I fit a Bayesian hierarchical model in PyMC with county intercepts and state-level slopes, so each county is informed by its state rather than pooled into a single national average.
 
-The positive sign is the part worth sitting with. More rental supply should lower rents, so the result more likely reflects where credits get allocated (high-demand markets) than a price effect of the units themselves.
+The positive sign is worth scrutiny. Added rental supply would normally push rents down, so the association more likely reflects where credits are allocated, toward markets with high housing demand, than a direct price effect of the units themselves.
 
 <img src="https://github.com/mawi510/lihtc-bayesian-analysis/blob/main/reports/figures/housing_plot_forest.jpg?raw=true" width="480"/>
 
