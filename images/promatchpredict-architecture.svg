@@ -61,5 +61,4 @@
   <line x1="415" y1="385" x2="415" y2="220" stroke="#475569" stroke-width="1.4" marker-end="url(#arr)" stroke-dasharray="3,3"/>
   <text x="423" y="305" font-size="10" fill="#64748b">deploys</text>
 
-  <text x="430" y="495" text-anchor="middle" font-size="11" fill="#64748b">One EC2 instance · two services · fully automated CI/CD</text>
 </svg>
