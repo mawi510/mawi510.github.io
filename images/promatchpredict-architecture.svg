@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" font-family="-apple-system, system-ui, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <text x="430" y="30" text-anchor="middle" font-size="18" font-weight="600" fill="#0f172a">promatchpredict.com — architecture</text>
+
+  <!-- User browser -->
+  <rect x="340" y="58" width="180" height="46" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="430" y="86" text-anchor="middle" font-size="14" fill="#0f172a">User browser</text>
+
+  <!-- DNS arrow -->
+  <line x1="430" y1="104" x2="430" y2="158" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="445" y="135" font-size="11" fill="#64748b">HTTPS · Route 53 DNS</text>
+
+  <!-- nginx on EC2 -->
+  <rect x="280" y="160" width="300" height="60" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+  <text x="430" y="186" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">nginx · EC2</text>
+  <text x="430" y="206" text-anchor="middle" font-size="11" fill="#64748b">Let's Encrypt · TLS termination</text>
+
+  <!-- Split arrows to two services -->
+  <line x1="360" y1="220" x2="220" y2="260" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="245" y="244" text-anchor="middle" font-size="11" fill="#64748b">apex</text>
+  <line x1="500" y1="220" x2="640" y2="260" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="618" y="244" text-anchor="middle" font-size="11" fill="#64748b">api.*</text>
+
+  <!-- Frontend -->
+  <rect x="60" y="260" width="280" height="86" rx="8" fill="#ecfdf5" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="200" y="286" text-anchor="middle" font-size="14" font-weight="600" fill="#065f46">Next.js — static export</text>
+  <text x="200" y="307" text-anchor="middle" font-size="12" fill="#065f46">/var/www/promatchpredict</text>
+  <text x="200" y="326" text-anchor="middle" font-size="11" fill="#16a34a">team picker · stat charts · win/loss</text>
+
+  <!-- API -->
+  <rect x="520" y="260" width="280" height="86" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="660" y="286" text-anchor="middle" font-size="14" font-weight="600" fill="#1e3a8a">FastAPI — Docker container</text>
+  <text x="660" y="307" text-anchor="middle" font-size="12" fill="#1e3a8a">/status · /predict · /teams · /stats</text>
+  <text x="660" y="326" text-anchor="middle" font-size="11" fill="#2563eb">scikit-learn RandomForest</text>
+
+  <!-- API -> S3 -->
+  <line x1="660" y1="346" x2="660" y2="384" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="685" y="370" font-size="11" fill="#64748b">reads</text>
+
+  <!-- S3 -->
+  <rect x="500" y="385" width="320" height="68" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="660" y="410" text-anchor="middle" font-size="14" font-weight="600" fill="#92400e">AWS S3 · nfl.data</text>
+  <text x="660" y="430" text-anchor="middle" font-size="11" fill="#92400e">model.pkl · features · stats · track record</text>
+
+  <!-- GitHub Actions -->
+  <rect x="60" y="385" width="380" height="68" rx="8" fill="#fafafa" stroke="#737373" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="250" y="410" text-anchor="middle" font-size="14" font-weight="600" fill="#262626">GitHub Actions</text>
+  <text x="250" y="430" text-anchor="middle" font-size="11" fill="#525252">on merge: deploy-api (GHCR → SSH) · deploy-web (rsync)</text>
+  <text x="250" y="447" text-anchor="middle" font-size="11" fill="#525252">weekly Wed cron: refresh S3 data + model backtest</text>
+
+  <!-- Arrows from Actions -->
+  <line x1="440" y1="419" x2="500" y2="419" stroke="#475569" stroke-width="1.4" marker-end="url(#arr)" stroke-dasharray="3,3"/>
+  <text x="470" y="412" text-anchor="middle" font-size="10" fill="#64748b">writes</text>
+
+  <line x1="250" y1="385" x2="280" y2="220" stroke="#475569" stroke-width="1.4" marker-end="url(#arr)" stroke-dasharray="3,3"/>
+  <text x="252" y="320" font-size="10" fill="#64748b">deploys</text>
+
+  <text x="430" y="495" text-anchor="middle" font-size="11" fill="#64748b">One EC2 instance · two services · fully automated CI/CD</text>
+</svg>
