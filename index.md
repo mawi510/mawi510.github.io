@@ -30,17 +30,17 @@ The positive sign is worth scrutiny. Added rental supply would normally push ren
 __Try the model and explore team trends at <a href="https://promatchpredict.com/" target="_blank" rel="noopener noreferrer">promatchpredict.com</a>__
 
 
-**Project overview:** I love sports and data, and I wanted to ship the full loop — gather the data, train a model, and deploy it as a real product people can use.
+**Project overview:** As an avid sports fan, I looked for opportunities to incorporate both my fandom and my technical skillsets.
 
-Weekly, the pipeline pulls NFL performance, betting spreads, and weather data, engineers nearly a thousand features per team-week, and trains a random-forest classifier that predicts which team will cover the spread. The site itself is a static Next.js app calling a containerized FastAPI service, both running on a single EC2 instance behind nginx and Let's Encrypt. Everything ships through GitHub Actions: merging to `main` rebuilds the Docker image, pushes it to GHCR, and restarts the container; a separate workflow rsyncs the static site; and a Wednesday cron refreshes the data, per-team features, and the season win/loss backtest to S3 — so the site updates without any redeploys.
+I scraped historical performance data, historical betting spreads, and historical weather to create a dataset to train a random forest classifier, which flows into the website listed above. This was a great project to construct an ETL pipeline, train/test an ML model, and then deploy said model to the cloud so others could interact with it.
 
-The diagram below shows how the pieces fit together.
+The diagram below details how the website is powered and where data comes from
 
 <img src="images/promatchpredict-architecture.svg" alt="ProMatchPredict architecture diagram"/>
 
 ***Technical skills:*** ML model deployment, ETL, CI/CD, containerization, infrastructure as code, static site hosting
 
-***Tools:*** Python, scikit-learn, FastAPI, Next.js + Tailwind, Docker, EC2 + nginx, Let's Encrypt, AWS S3, GitHub Actions, GHCR
+***Tools:*** Python, Sci-kit Learn, Docker, EC2, Github Actions
 
 [![Open Code](https://img.shields.io/badge/GitHub-PredictingNFLGames-181717?logo=github)](https://github.com/mawi510/PredictingNFLGames)
 
